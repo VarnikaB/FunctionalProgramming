@@ -1,13 +1,16 @@
 package functionalinterface;
 
+import java.util.function.Function;
+
 public class _Function {
+
+    //Function<Input, Output>
+    static Function<Integer, Integer> incrementByOne = number -> ++number;
+
     public static void main(String[] args) {
-        int increment = increment(0);
+        Integer increment = incrementByOne.apply(0);
         System.out.println(increment);
 
     }
 
-    static int increment(int number){
-        return number + 1;
-    }
 }
