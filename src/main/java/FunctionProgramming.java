@@ -1,5 +1,7 @@
+import javax.imageio.plugins.jpeg.JPEGImageReadParam;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class FunctionProgramming {
 
@@ -12,15 +14,11 @@ public class FunctionProgramming {
                 new Person("Alex", Gender.MALE)
         );
 
-        ArrayList<Person> females = new ArrayList<>();
-        for(Person person : people){
-            if(Gender.FEMALE.equals(person.gender))
-                females.add(person);
-        }
+        people.stream()
+                .filter(person -> Gender.FEMALE.equals(person.gender))
+                .collect(Collectors.toList())
+                .forEach(System.out::println);
 
-        for(Person female : females ){
-            System.out.println(female);
-        }
     }
 
     private static class Person {
