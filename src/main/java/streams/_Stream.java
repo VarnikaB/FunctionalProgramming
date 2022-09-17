@@ -39,8 +39,8 @@ public class _Stream {
         );
 
         people.stream()
-                .map(person -> person.gender)
-                .collect(Collectors.toSet())
+                .map(person -> person.name)
+                .mapToInt(name -> name.length())
                 .forEach(System.out::println);
 
     }
