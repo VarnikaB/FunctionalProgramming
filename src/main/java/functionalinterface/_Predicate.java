@@ -1,5 +1,6 @@
 package functionalinterface;
 
+import java.util.function.BiPredicate;
 import java.util.function.Predicate;
 
 public class _Predicate {
@@ -15,7 +16,5 @@ public class _Predicate {
 
     }
 
-    static boolean isPhoneNumberValid(String phoneNumber) {
-        return phoneNumber.startsWith("1") && phoneNumber.length() == 10;
-    }
+
 }
