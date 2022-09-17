@@ -10,11 +10,11 @@ public class _Function {
 
     public static void main(String[] args) {
 
-        Integer increment = incrementByOne.apply(1);
-        System.out.println(increment);
+        Function<Integer, Integer> incrementByOneAndThenMultiplyByTen
+                = incrementByOne.andThen(multiplyByTen);
 
-        Integer product = multiplyByTen.apply(increment);
-        System.out.println(product);
+        Integer result = incrementByOneAndThenMultiplyByTen.apply(1);
+        System.out.println(result);
 
     }
 
