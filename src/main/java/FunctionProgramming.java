@@ -14,10 +14,12 @@ public class FunctionProgramming {
                 new Person("Alex", Gender.MALE)
         );
 
-        people.stream()
+        List<Person> females = people.stream()
                 .filter(person -> Gender.FEMALE.equals(person.gender))
-                .collect(Collectors.toList())
-                .forEach(System.out::println);
+                .collect(Collectors.toList());
+
+        females.forEach(System.out::println );
+
 
     }
 
