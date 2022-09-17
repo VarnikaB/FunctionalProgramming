@@ -1,18 +1,21 @@
 package functionalinterface;
 
+import java.util.function.Consumer;
+
 public class _Consumer {
+    static Consumer<Customer> greetConsumerCustomer = customer ->
+            System.out.println("Hello " + customer.name
+                    + ", thanks for registering for phone number "
+                    + customer.phoneNumber);
+
     public static void main(String[] args) {
 
         Customer customer = new Customer("Varnika", "1234567890");
-        greetCustomer(customer);
+
+        greetConsumerCustomer.accept(customer);
 
     }
 
-    static void greetCustomer(Customer customer) {
-        System.out.println("Hello " + customer.name
-                + ", thanks for registering for phone number "
-                + customer.phoneNumber);
-    }
 
     static class Customer {
 
