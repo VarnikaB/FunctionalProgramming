@@ -1,6 +1,7 @@
 import javax.imageio.plugins.jpeg.JPEGImageReadParam;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class FunctionProgramming {
@@ -14,8 +15,10 @@ public class FunctionProgramming {
                 new Person("Alex", Gender.MALE)
         );
 
+        Predicate<Person> personPredicate = person -> Gender.FEMALE.equals(person.gender);
+
         List<Person> females = people.stream()
-                .filter(person -> Gender.FEMALE.equals(person.gender))
+                .filter(personPredicate)
                 .collect(Collectors.toList());
 
         females.forEach(System.out::println );
